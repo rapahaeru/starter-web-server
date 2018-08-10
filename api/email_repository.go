@@ -12,7 +12,7 @@ type Email struct {
 	DateDeliveryFormated string `json:"date_delivery_formated"`
 }
 
-// GetEmailList é mto legal
+// GetEmailList gets list of emails
 func GetEmailList() ([]byte, error) {
 	data := []Email{
 		{1, "Cael", "Descrição do cael", "/assets/images/hyoga.gif", "2018-06-25", "25/06/2018"},
@@ -23,3 +23,5 @@ func GetEmailList() ([]byte, error) {
 
 	return json.Marshal(data)
 }
+
+//func que pega o objeto, iterando para filtrar o buscado
