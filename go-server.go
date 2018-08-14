@@ -21,12 +21,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	r.ParseForm()
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	for index, value := range r.Form {
 
 		if index == "token" {
 			token := strings.Join(value, "")
-			fmt.Printf("retorno: %v", checkToken(token))
 
 			if checkToken(token) {
 				w.WriteHeader(http.StatusOK)
